@@ -55,7 +55,8 @@ namespace Program
             
             return TimeSinceMidnight(totalSeconds);
         }
-        static int Difference(MyTime mt1, MyTime mt2) {
+        static int Difference(MyTime mt1, MyTime mt2) 
+        {
             int totalFirst = TimeSinceMidnight(mt1);
             int totalSecond = TimeSinceMidnight(mt2);
             int diff = Math.Abs(totalFirst - totalSecond);
