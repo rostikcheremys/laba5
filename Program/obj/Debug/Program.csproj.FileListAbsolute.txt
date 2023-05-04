@@ -5,3 +5,6 @@ D:\Documents\ЧНУ\C#\ЛР5\Program\Program\obj\Debug\Program.csproj.SuggestedB
 D:\Documents\ЧНУ\C#\ЛР5\Program\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 D:\Documents\ЧНУ\C#\ЛР5\Program\Program\obj\Debug\Program.exe
 D:\Documents\ЧНУ\C#\ЛР5\Program\Program\obj\Debug\Program.pdb
+D:\Documents\ЧНУ\C#\ЛР5\Program\Program\bin\Debug\nunit.framework.dll
+D:\Documents\ЧНУ\C#\ЛР5\Program\Program\bin\Debug\nunit.framework.xml
+D:\Documents\ЧНУ\C#\ЛР5\Program\Program\obj\Debug\Program.csproj.CopyComplete
