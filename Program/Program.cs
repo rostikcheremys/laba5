@@ -7,13 +7,20 @@ namespace Program
         public int hour, minute, second;
         public MyTime(int h, int m, int s)
         {
-            hour = h;
-            minute = m;
-            second = s;
+            if (h >= 0 && h <= 23 && m >= 0 && m <= 59 && s >= 0 && s <= 59)
+            {
+                hour = h;
+                minute = m;
+                second = s;
+            }
+            else
+            {
+                throw new Exception("Invalid time format!");
+            }
         }
         public override string ToString()
         {
-            return $"{hour:D2}:{minute:D2}:{second:D2}";
+            return $"{hour:D1}:{minute:D2}:{second:D2}";
         }
     }
     internal class Program
@@ -76,10 +83,10 @@ namespace Program
             int minute = int.Parse(values[1]);
             int second = int.Parse(values[2]);
 
-            MyTime t = new MyTime(hour, minute, second);
-            
-            if (hour >= 0 && minute >= 0 && second >= 0 && hour <= 23 && minute <= 59 && second <= 59)
+            try
             {
+                MyTime t = new MyTime(hour, minute, second);
+                
                 Console.WriteLine($"Time: {t.ToString()}"); 
                 Console.WriteLine($"Seconds since midnight: {TimeSinceMidnight(t)}");
                 Console.WriteLine($"Time from seconds: {TimeSinceMidnight(hour * 3600 + minute * 60 + second)}");
@@ -89,9 +96,9 @@ namespace Program
                 Console.WriteLine($"Add 10 seconds: {AddSeconds(t, 10)}");
                 Console.WriteLine($"Difference between 12:00 and {t.ToString()} is {Difference(new MyTime(12, 0, 0), t)} seconds");
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Invalid time format!");
+                Console.WriteLine(ex.Message);
             }
         }
     }
